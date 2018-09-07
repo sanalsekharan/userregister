@@ -41,7 +41,7 @@ class Login extends Component {
     login() {
         console.log(this.state);
         axios
-            .post(serverIp + '/api/users/login', this.state)
+            .post(serverIp + '/api/users/loginUser', this.state)
             .then(
                 function (response) {
                     console.log(response);

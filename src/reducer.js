@@ -16,7 +16,7 @@ export default (state = initialState, action) => {
             authService.logout();
             return {
                 ...state,
-                profiles: [...state.profiles, {}],
+                login: false,
             };
         case SIGNIN:
             return { ...state, login: true, email: action.data.email };

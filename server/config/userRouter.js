@@ -96,7 +96,7 @@ router.post('/register', function (req, res) {
     });
 });
 
-router.post('/login', function (req, res) {
+router.post('/loginUser', function (req, res) {
     UserModel.find({ email: { $eq: req.body.email } }, function (err, users) {
         if (users.length === 0) {
             res.json({
@@ -113,7 +113,7 @@ router.post('/login', function (req, res) {
                     });
                     let date = new Date();
                     let token = date.getTime()
-                    let link = "http://192.168.1.108:3030/api/users/login/" + encrypt(req.body.email) + '/' + ranNumber
+                    let link = "http://127.0.0.1:3030/api/users/login/" + encrypt(req.body.email) + '/' + ranNumber
                     db.collection('users').update({ email: req.body.email }, { $set: { loginCode: ranNumber, loginCodeValidaity: token } }, false, false);
                     let data = {
                         from: 'Admin <me@sandbox09df41a6268f42dfa431e2f5b75e5924.mailgun.org>',
@@ -159,7 +159,7 @@ router.get("/login/:email/:code", function (req, res) {
                 req.session.email = req.params.email;
                 req.session.code = users[0].loginCodeValidaity;
                 req.session.save();
-                res.redirect("http://192.168.1.108:3000/");
+                res.redirect("http://127.0.0.1:3030/");
             }
         }
     })

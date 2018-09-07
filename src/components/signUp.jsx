@@ -38,7 +38,7 @@ class Signup extends Component {
             .then(
                 function (response) {
                     console.log(response);
-                    if (response) {
+                    if (response.data.success) {
                         this.setState({
                             firstname: '',
                             lastname: '',
@@ -49,6 +49,7 @@ class Signup extends Component {
                         });
                         this.props.switch("login")
                     } else {
+                        alert(response.data.message)
                         this.setState({ userError: true });
                     }
                 }.bind(this)
