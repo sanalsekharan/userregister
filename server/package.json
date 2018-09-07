@@ -1,0 +1,31 @@
+{
+  "name": "registerbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sanal K S",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "credential": "^2.0.0",
+    "crypto": "^1.0.1",
+    "express": "^4.15.3",
+    "express-session": "^1.15.4",
+    "formidable": "^1.1.1",
+    "fs": "0.0.1-security",
+    "googleapis": "^20.1.0",
+    "mailgun-js": "^0.20.0",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.22.2",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.11.4",
+    "randomstring": "^1.1.5",
+    "request": "^2.81.0",
+    "socket.io": "^2.0.3"
+  }
+}
